@@ -1,0 +1,170 @@
+.scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.table {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-alt);
+  text-align: left;
+  padding: 13px 14px;
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--text-body);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.sortBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  transition: color var(--dur) var(--ease);
+}
+
+.sortBtn:hover {
+  color: var(--color-primary);
+}
+
+.sortIdle {
+  color: var(--text-faint);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.sortBtn:hover .sortIdle {
+  opacity: 1;
+}
+
+.sortActive {
+  color: var(--color-primary);
+}
+
+/* Column filter row */
+.filterRow td {
+  padding: 8px 10px 10px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.filterInput {
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+  padding: 0 8px;
+  font-size: 12.5px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-strong);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.filterInput::placeholder {
+  color: var(--text-faint);
+}
+
+.filterInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--border-focus);
+}
+
+.filterDates {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 112px;
+}
+
+/* Body */
+.table tbody td {
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-body);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background-color var(--dur) var(--ease);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--surface-hover);
+}
+
+.rowSelected,
+.rowSelected:hover {
+  background: var(--color-primary-soft);
+}
+
+.checkCell {
+  width: 44px;
+  padding-left: 18px !important;
+  padding-right: 0 !important;
+}
+
+.emailCell {
+  min-width: 168px;
+  max-width: 240px;
+}
+
+.email {
+  color: var(--text-strong);
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.empty {
+  padding: 48px 16px !important;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.actionBtn:hover {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}

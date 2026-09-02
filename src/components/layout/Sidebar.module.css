@@ -1,0 +1,129 @@
+.sidebar {
+  position: sticky;
+  top: var(--topnav-height);
+  align-self: start;
+  flex: none;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--topnav-height));
+  display: flex;
+  flex-direction: column;
+  padding: 22px 18px 18px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.brandSpark {
+  color: #8fb4ff;
+  font-size: 11px;
+  transform: translateY(-6px);
+}
+
+.brandSub {
+  margin-left: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.closeBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.closeBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text-strong);
+}
+
+.navItem {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  margin: 18px -6px 0;
+  padding: 2px 6px 4px;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    height: 100vh;
+    width: min(320px, 86vw);
+    border-right: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(-102%);
+    transition: transform var(--dur-slow) var(--ease);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .closeBtn {
+    display: inline-flex;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: rgba(16, 24, 40, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-slow) var(--ease);
+  }
+
+  .overlayShown {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
