@@ -3,6 +3,8 @@
 Frontend Developer Assessment — the **Waitlist → Service Providers** dashboard page,
 built from the provided Figma design.
 
+**Live demo:** https://gler-eight.vercel.app
+
 **Stack:** React 18 + TypeScript + Vite. Styling is plain CSS Modules with design
 tokens (`src/styles/tokens.css`) — no UI framework.
 
@@ -12,6 +14,19 @@ tokens (`src/styles/tokens.css`) — no UI framework.
 npm install
 npm run dev      # http://localhost:5173
 ```
+
+## Deployment
+
+Hosted on **Vercel** (zero-config Vite preset). Every push to `main` triggers a
+production deploy; pull requests get preview URLs.
+
+| Setting           | Value           |
+| ----------------- | --------------- |
+| Framework preset  | Vite            |
+| Build command     | `npm run build` (`tsc --noEmit && vite build`) |
+| Output directory  | `dist`          |
+| Node version      | 22.x (`engines` in `package.json`) |
+| Environment vars  | none            |
 
 | Script              | Purpose                          |
 | ------------------- | -------------------------------- |
